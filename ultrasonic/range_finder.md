@@ -16,7 +16,7 @@ Here, We intend to estimate the distance of an object from the ultrasonic sensor
 #### Ultrasonic sensor
 We use HC-SR04 module in our project. The module works on principle of transmitting and receiving the ultrasonic waves which is projected towards an object. We send a 10 microseconds signal to the trig pin of the module. This triggers a burst of 40kHz (higher than hearing range) pulses from the sensor. The sensor sends eight of these pulses. After this we use pulseIn() function which calculates the duration of the pulse to return. Pulse function in our case triggers a timer which calculates the propagation delay. This is read via the echo pin. The value read is in microseconds.
 
-![Timing-diagram](../images/ultrasonic/hc-sr04-timing diagram.png)
+![Timing-diagram](../images/ultrasonic/hc-sr04-timing-diagram.png)
 
 We then convert the microseconds read into centimeters and print it in the serial monitor.
 
