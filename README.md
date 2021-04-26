@@ -9,6 +9,9 @@ My exploration of Arduino-based electronics projects.
 2. [Range finder using ultrasonic sensor](ultrasonic/range_finder.md)
 
 
+## References
+1. Installing arduino IDE in ubuntu machine. [Link](https://ubuntu.com/tutorials/install-the-arduino-ide)
+
 
 <br>
 
