@@ -24,7 +24,7 @@ This module is a stand-alone module, which can connect to any hardware via bluet
 #### Testing
 Finally,  after we have uploaded the sketch successfully, we then make the necessary connections from the Bluetooth module to the Arduino board. We then run the app and connect to HC-05 module. Then we can enter the characters from the terminal tab in the app.
 
-![Schematics](../images/bt/bt_blink_bb.jpg)
+![Schematics](../../images/bt/bt_blink_bb.jpg)
 
 We can have the serial monitor open to check if we are receiving the characters correctly.
 
