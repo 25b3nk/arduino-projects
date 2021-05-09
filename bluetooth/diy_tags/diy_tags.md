@@ -1,5 +1,5 @@
 ### Introduction
-This is the extension of [__`bt_blink`__](../bt_blink/bt_blink.md) project.
+This is the extension of [__`bt_blink`__](../bt_blink/bt_blink.md) project. Here, I am trying to create something similar to Apple AirTags. The arduino + HC-05 module will act as AirTag, which will be addressed as `device`. Currently the `device` receives and sends data from/to the app.
 
 ### Items required
 
