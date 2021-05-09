@@ -5,9 +5,9 @@ My exploration of Arduino-based electronics projects.
 
 ## Projects
 
-1. [Blink an LED via bluetooth](bluetooth/bt_blink/bt_blink.md)
-1. [Range finder using ultrasonic sensor](ultrasonic/range_finder.md)
-1. [DIY tags](bluetooth/diy_tags/diy_tags.md)
+1. [Blink an LED via bluetooth](bluetooth/bt_blink/README.md)
+1. [Range finder using ultrasonic sensor](ultrasonic/README.md)
+1. [DIY tags](bluetooth/diy_tags/README.md)
 
 
 ## References
