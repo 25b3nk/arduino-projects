@@ -1,0 +1,32 @@
+# Arduino Projects - Git Ignore File
+
+# Sensitive configuration files (WiFi credentials, API keys, etc.)
+**/config.h
+**/secrets.h
+**/.env
+
+# Arduino IDE build artifacts
+**/*.hex
+**/*.eep
+**/*.elf
+**/*.map
+
+# Build directories
+**/build/
+**/bin/
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# IDE specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.bak
+*.old
