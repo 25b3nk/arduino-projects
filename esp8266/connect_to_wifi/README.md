@@ -1,6 +1,23 @@
 ## Introduction
 Connect to your wifi connection using esp8266
 
+## Configuration
+
+**IMPORTANT**: Before uploading this sketch, you must configure your WiFi credentials:
+
+1. Copy `config.h.example` to `config.h`:
+   ```bash
+   cp config.h.example config.h
+   ```
+
+2. Edit `config.h` and replace the placeholder values with your actual WiFi credentials:
+   ```cpp
+   const char* WIFI_SSID = "YourNetworkName";
+   const char* WIFI_PASSWORD = "YourNetworkPassword";
+   ```
+
+3. The `config.h` file is ignored by Git and will NOT be committed to version control (for security).
+
 ## Items required
 
 ### Hardware
