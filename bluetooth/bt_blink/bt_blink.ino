@@ -1,6 +1,14 @@
+// Configuration constants
+#define SERIAL_BAUD_RATE 9600       // Baud rate for Bluetooth communication (HC-05 standard)
+#define LOOP_DELAY_MS 50            // Delay between serial reads (milliseconds)
+
+// Command definitions for Bluetooth control
+#define CMD_LED_ON '1'              // Command to turn LED on
+#define CMD_LED_OFF '2'             // Command to turn LED off
+
 void setup() {
   // put your setup code here, to run once:
-  Serial.begin(9600);
+  Serial.begin(SERIAL_BAUD_RATE);
   pinMode(LED_BUILTIN, OUTPUT);
 }
 
@@ -11,12 +19,12 @@ void loop() {
       char data= Serial.read(); // reading the data received from the bluetooth module
       switch(data)
       {
-        case '1': 
+        case CMD_LED_ON:
         {
           digitalWrite(LED_BUILTIN, HIGH);
           break;
         }
-        case '2': 
+        case CMD_LED_OFF:
         {
           digitalWrite(LED_BUILTIN, LOW);
           break;
@@ -25,5 +33,5 @@ void loop() {
       }
       Serial.println(data);
    }
-   delay(50);
+   delay(LOOP_DELAY_MS);
 }

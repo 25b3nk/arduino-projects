@@ -1,9 +1,23 @@
-// Define the device ID. This can be changed to a unique name for each tag.
-#define DEVICE_ID "MyTag-01"
+// Device configuration
+#define DEVICE_ID "MyTag-01"        // Unique identifier for this tag
+
+// Serial communication settings
+#define SERIAL_BAUD_RATE 9600       // Baud rate for Bluetooth communication (HC-05 standard)
+#define LOOP_DELAY_MS 50            // Delay between serial reads (milliseconds)
+
+// Command definitions for Bluetooth control
+#define CMD_LED_ON '1'              // Command to turn LED on
+#define CMD_LED_OFF '2'             // Command to turn LED off
+#define CMD_FIND '3'                // Command to trigger "find my device" feature
+
+// "Find my device" feature settings
+#define FIND_BLINK_COUNT 5          // Number of times to blink when "find" is triggered
+#define FIND_BLINK_ON_MS 200        // LED on duration during find blink (milliseconds)
+#define FIND_BLINK_OFF_MS 200       // LED off duration during find blink (milliseconds)
 
 void setup() {
   // put your setup code here, to run once:
-  Serial.begin(9600);
+  Serial.begin(SERIAL_BAUD_RATE);
   pinMode(LED_BUILTIN, OUTPUT);
 }
 
@@ -17,7 +31,7 @@ void loop() {
       // 'Arduino Bluetooth controller' Android app mentioned in the bt_blink project.
       switch(data)
       {
-        case '1': 
+        case CMD_LED_ON:
         {
           digitalWrite(LED_BUILTIN, HIGH);
           Serial.print("ID:");
@@ -25,7 +39,7 @@ void loop() {
           Serial.println(",STATUS:ON");
           break;
         }
-        case '2': 
+        case CMD_LED_OFF:
         {
           digitalWrite(LED_BUILTIN, LOW);
           Serial.print("ID:");
@@ -33,21 +47,21 @@ void loop() {
           Serial.println(",STATUS:OFF");
           break;
         }
-        case '3':
+        case CMD_FIND:
         {
           Serial.print("ID:");
           Serial.print(DEVICE_ID);
           Serial.println(",STATUS:FINDING");
-          for (int i = 0; i < 5; i++) {
+          for (int i = 0; i < FIND_BLINK_COUNT; i++) {
             digitalWrite(LED_BUILTIN, HIGH);
-            delay(200);
+            delay(FIND_BLINK_ON_MS);
             digitalWrite(LED_BUILTIN, LOW);
-            delay(200);
+            delay(FIND_BLINK_OFF_MS);
           }
           break;
         }
         default : break;
       }
    }
-   delay(50);
+   delay(LOOP_DELAY_MS);
 }
